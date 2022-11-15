@@ -34,6 +34,8 @@ name = st.text_input("Enter pitcher name (Last, First)")
 st.sidebar.header("FAQ")
 with st.sidebar.expander("Why am I getting an error?"):
     st.write("This is because you have not entered a valid pitcher's name. Try again with a valid pitcher's name.")
+with st.sidebar.expander("I entered a valid pitcher's name but I am still getting an error?"):
+    st.write("This is because in the given timeframe, that pitcher did not throw a pitch (injured, hadn't made season debut, called up to the MLB after the specified date, etc)")
 st.sidebar.markdown("---")
 
 new_df = narrow_df[narrow_df['player_name'] == name]
