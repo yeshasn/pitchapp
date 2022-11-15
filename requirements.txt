@@ -1,2 +1,2 @@
 scikit-learn==1.1.3
-baseball_scraper==1.15.0
+baseball_scraper==0.4.10
