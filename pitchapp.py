@@ -35,7 +35,8 @@ st.sidebar.header("FAQ")
 with st.sidebar.expander("Why am I getting an error?"):
     st.write("This is because you have not entered a valid pitcher's name. Try again with a valid pitcher's name.")
 with st.sidebar.expander("I entered a valid pitcher's name but I am still getting an error?"):
-    st.write("This is because in the given timeframe, that pitcher did not throw a pitch (injured, hadn't made season debut, called up to the MLB after the specified date, etc)")
+    st.write("One reason for this is because in the given timeframe, that pitcher did not throw a pitch (injured, hadn't made season debut, called up to the MLB after the specified date, etc).")
+    st.write("Another reason for this could be incorrect capitalization. Please capitalize the first and last names then try again.")
 st.sidebar.markdown("---")
 
 new_df = narrow_df[narrow_df['player_name'] == name]
