@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 import pandas as pd
 import streamlit as st
 
-df = pd.read_csv("ASGupdate.csv")
+df = pd.read_csv("playoff1.csv")
 
 narrow_df = df[['player_name', 'stand', 'balls', 'strikes', 'outs_when_up', 'on_1b', 'on_2b', 'on_3b', 'pitch_name']]
 narrow_df.loc[:,'on_1b'] = narrow_df.loc[:,'on_1b'].fillna(0)
@@ -31,12 +31,10 @@ st.markdown("---")
 
 name = st.text_input("Enter pitcher name (Last, First)")
 
+
 st.sidebar.header("FAQ")
 with st.sidebar.expander("Why am I getting an error?"):
     st.write("This is because you have not entered a valid pitcher's name. Try again with a valid pitcher's name.")
-with st.sidebar.expander("I entered a valid pitcher's name but I am still getting an error?"):
-    st.write("One reason for this is because in the given timeframe, that pitcher did not throw a pitch (injured, hadn't made season debut, called up to the MLB after the specified date, etc).")
-    st.write("Another reason for this could be incorrect capitalization. Please capitalize the first and last names then try again.")
 st.sidebar.markdown("---")
 
 new_df = narrow_df[narrow_df['player_name'] == name]
@@ -46,7 +44,7 @@ length = len(new_df)
 first = name[name.index(",")+1:]
 last = name[:name.index(",")]
 st.write(" ")
-st.write(first, last, "has thrown", length, "pitches between April 7th and July 18th 2022")
+st.write(first, last, "has thrown", length, "pitches between April 7th and September 1st 2022")
 new_df
 
 X = []
