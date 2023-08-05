@@ -30,8 +30,10 @@ Enter pitcher name then use the sliders to predict a pitch
 st.markdown("---")
 
 name = st.text_input("Enter pitcher name (Last, First)")
-if name is None:
-    st.error("Please enter valid pitcher name")
+try:
+    name = name
+except:
+    st.error("Please enter a name")
     st.stop()
 
 
