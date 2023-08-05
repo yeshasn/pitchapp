@@ -29,12 +29,7 @@ Enter pitcher name then use the sliders to predict a pitch
 
 st.markdown("---")
 
-name = st.text_input("Enter pitcher name (Last, First)")
-try:
-    name = name
-except:
-    st.error("Please enter a name")
-    st.stop()
+name = st.text_input("Enter pitcher name (Last, First)", placeholder = "Verlander, Justin")
 
 
 st.sidebar.header("FAQ")
